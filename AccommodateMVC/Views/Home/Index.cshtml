@@ -4,5 +4,17 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>HOW MAY WE ACCOMMODATE YOU</p>
+</div>
+
+<div class="text-center">
+    <p> I would like to </p>
+    <ul style="list-style-type:none">
+        
+        @foreach (KeyValuePair<string, string> action in ViewBag.actions)
+        {
+            <li><a href="/@action.Key">@action.Value</a></li>
+        }
+
+    </ul>
 </div>

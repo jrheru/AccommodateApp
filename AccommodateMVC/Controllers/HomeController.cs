@@ -11,27 +11,16 @@ namespace AccommodateMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
-            return View();
-        }
+            Dictionary<string, string> actionChoices = new Dictionary<string, string>();
+            actionChoices.Add("public", "Check the Accessibility of a Public Entity");
+            actionChoices.Add("event", "Search for Different Ability Friendly Events In My Area");
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+            ViewBag.actions = actionChoices;
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }
+    
