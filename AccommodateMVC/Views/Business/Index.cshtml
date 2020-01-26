@@ -1,0 +1,12 @@
+﻿@model List<AccommodateMVC.Models.Business>
+
+<ul>
+    @foreach(var business in Model)
+    {
+        <l1>
+            <a asp-controller="Business" asp-action="ViewBusiness" asp-route-id="@business.ID">@business.Name</a>
+        </l1>
+    }
+</ul>
+
+<p><a asp-controller="Business" asp-action="Add">Add Business</a></p>

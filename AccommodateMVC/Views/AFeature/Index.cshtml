@@ -1,0 +1,26 @@
+﻿@model List<AccommodateMVC.Models.AFeature>
+
+<h1>@ViewBag.Title</h1>
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach (var feature in Model)
+    {
+        <tr>
+            <td>@feature.Name</td>
+            <td>@feature.Description</td>
+        </tr>
+    }
+</table>
+
+@if (Model.Count == 0)
+{
+    <p> Accessible Features Haven't Been Added</p>
+}
+
+<p><a asp-controller="AFeature" asp-action="Add">Add Accessible Feature</a></p>

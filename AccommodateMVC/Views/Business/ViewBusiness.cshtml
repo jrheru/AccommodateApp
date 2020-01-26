@@ -1,0 +1,14 @@
+﻿@model AccommodateMVC.ViewModels.ViewBusinessViewModel
+
+<h1>@Model.Business.Name</h1>
+
+<ul>
+    @foreach(var feature in Model.Features)
+    {
+        <li>
+            @feature.AFeature.Name
+        </li>
+    }
+</ul>
+
+<a asp-controller="Business" asp-action="AddFeature" asp-route-id="@Model.Business.ID">Add Accessiblity Feature</a>
