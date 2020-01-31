@@ -10,8 +10,8 @@ namespace AccommodateMVC.ViewModels
 {
     public class AddAFeatureViewModel
     {
-        [Required]
-        [Display(Name = "Accessiblity Feature")]
+        [Required(ErrorMessage = "Please enter a accessible feature")]
+        [Display(Name = "Accessibility Feature")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please give a description of the feature")]

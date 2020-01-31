@@ -1,7 +1,8 @@
 ﻿@model AccommodateMVC.ViewModels.ViewBusinessViewModel
 
-<h1>@Model.Business.Name</h1>
-
+    <h2>@Model.Business.Name</h2>
+    <p>@Model.Business.Address<br />@Model.Business.Type</p>
+    
 <ul>
     @foreach(var feature in Model.Features)
     {

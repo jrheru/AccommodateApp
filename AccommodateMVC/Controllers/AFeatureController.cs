@@ -49,7 +49,7 @@ namespace AccommodateMVC.Controllers
                 context.AFeatures.Add(newAFeature);
                 context.SaveChanges();
 
-                return Redirect("AFeature");
+                return Redirect("/");
             }
             return View(addAFeatureViewModel);
         }

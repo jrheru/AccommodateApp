@@ -1,20 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+    <div class="jumbotron">
+        <h1 class="display-3">Welcome to AccessiBlue</h1>
+        <p class="lead">Your accessible travel companion for people with different abilities!</p>
+        <hr class="my-4">
+        <div style="text-align:left">
+            <p>Public Entities can add their establishment information and asscessible features<br /> to our database for the general public to view.</p>
+            <a href="@Url.Action("Add", "Business")">
+                <input type="button" class="btn btn-primary" value="Add Business Now" />
+            </a>
+        </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>HOW MAY WE ACCOMMODATE YOU</p>
-</div>
+    </div>
 
-<div class="text-center">
-    
-    <ul style="list-style-type:none">
-        
-        @foreach (KeyValuePair<string, string> action in ViewBag.actions)
-        {
-            <li><a href="/@action.Key">@action.Value</a></li>
-        }
-
-    </ul>
-</div>

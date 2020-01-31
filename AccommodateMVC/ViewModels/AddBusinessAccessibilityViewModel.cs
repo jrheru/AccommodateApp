@@ -21,12 +21,12 @@ namespace AccommodateMVC.ViewModels
         public AddBusinessAccessibilityViewModel()
         { }
 
-        public AddBusinessAccessibilityViewModel(Business business, IEnumerable<AFeature> features)
+        public AddBusinessAccessibilityViewModel(Business business, IEnumerable<AFeature> afeatures)
         {
             Business = business;
             Features = new List<SelectListItem>();
 
-            foreach(var feature in features)
+            foreach(var feature in afeatures)
             {
                 Features.Add(new SelectListItem
                 {

@@ -16,7 +16,7 @@ namespace AccommodateMVC.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BusinessAF>()
-                .HasKey(c => new { c.AFeatureID, c.BusinessID });
+                .HasKey(b => new { b.AFeatureID, b.BusinessID });
         }
 
         public AccessibleDbContext()

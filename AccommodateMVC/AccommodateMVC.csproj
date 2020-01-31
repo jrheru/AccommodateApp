@@ -11,6 +11,8 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="1.1.6" />
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="bootstrap" Version="4.4.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,5 +37,24 @@
     <Folder Include="Views\Business\" />
     <Folder Include="Views\AFeature\" />
     <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-cosmo.min.css" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <Content Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Remove="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Content\css\fontawesome.css" />
   </ItemGroup>
 </Project>

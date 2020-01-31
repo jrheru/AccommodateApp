@@ -14,8 +14,8 @@ namespace AccommodateMVC.Controllers
         public IActionResult Index()
         {
             Dictionary<string, string> actionChoices = new Dictionary<string, string>();
-            actionChoices.Add("public", "Check the Accessibility of a Public Entity");
-            actionChoices.Add("event", "Search for Different Ability Friendly Events In My Area");
+            actionChoices.Add("business", "Check for Accessibile Public Entities");
+            actionChoices.Add("afeature", "List of Accessible Public Accommodations");
 
             ViewBag.actions = actionChoices;
 

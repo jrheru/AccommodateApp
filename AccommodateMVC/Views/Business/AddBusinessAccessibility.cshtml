@@ -1,0 +1,20 @@
+﻿@model AccommodateMVC.ViewModels.AddBusinessAccessibilityViewModel
+
+@{
+    ViewBag.Title = "Add Accessibility Feature to " + Model.Business.Name;
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form asp-controller="Business" asp-action="AddBusinessAccessibility" method="POST">
+    <div class="form-group">
+        <label asp-for="AFeatureID"></label>
+        <select asp-for="AFeatureID" asp-items="Model.Features"></select>
+        <span asp-validation-for="AFeatureID"></span>
+    </div>
+
+    <input type="hidden" name="BusinessID" value="@Model.Business.ID" />
+    <input type="submit" value="Add Accessibility" />
+    
+</form>
+

@@ -38,6 +38,7 @@ namespace AccommodateMVC.Controllers
             return View(addBusinessViewModel);
         }
 
+        //add business and information associated with it
         [HttpPost]
         public IActionResult Add(AddBusinessViewModel addBusinessViewModel)
         {
@@ -45,13 +46,15 @@ namespace AccommodateMVC.Controllers
             {
                 Business newBusiness = new Business
                 {
-                    Name = addBusinessViewModel.Name
+                    Name = addBusinessViewModel.Name,
+                    Address = addBusinessViewModel.Address,
+                    Type = addBusinessViewModel.Type
                 };
 
                 context.Businesses.Add(newBusiness);
                 context.SaveChanges();
 
-                return Redirect("/Business/ViewBusiness" + newBusiness.ID);
+                return Redirect("/");
             }
 
             return View(addBusinessViewModel);
@@ -59,7 +62,7 @@ namespace AccommodateMVC.Controllers
 
         public IActionResult ViewBusiness(int id)
         {
-            Business business = context.Businesses.Single(business => business.ID == id);
+            Business business = context.Businesses.Single(b => b.ID == id);
 
             List<BusinessAF> features = context
                 .BusinessAFs
@@ -76,6 +79,7 @@ namespace AccommodateMVC.Controllers
             return View(viewBusinessViewModel);
         }
 
+        [HttpGet("Business/AddFeature/{id:int}")]
         public IActionResult AddBusinessAccessibility(int id)
         {
             Business business = context.Businesses.Single(b => b.ID == id);
@@ -86,6 +90,7 @@ namespace AccommodateMVC.Controllers
         }
 
         [HttpPost]
+        [Route("/Business/AddFeature/{id:int}")]
         public IActionResult AddBusinessAccessibility(AddBusinessAccessibilityViewModel addBusinessAccessibilityViewModel)
         {
             if (ModelState.IsValid)
@@ -104,9 +109,9 @@ namespace AccommodateMVC.Controllers
                     context.BusinessAFs.Add(business);
                     context.SaveChanges();
 
-                    return Redirect("/Business/ViewBusiness" + business.BusinessID);
+                    return Redirect("/Business/ViewBusiness/" + business.BusinessID);
                 }
-                return Redirect("/Business/ViewBusiness" + addBusinessAccessibilityViewModel.BusinessID);
+                return Redirect("/Business/ViewBusiness/" + addBusinessAccessibilityViewModel.BusinessID);
             }
             return View(addBusinessAccessibilityViewModel);
         }

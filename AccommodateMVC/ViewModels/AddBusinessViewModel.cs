@@ -5,15 +5,15 @@ namespace AccommodateMVC.ViewModels
 {
     public class AddBusinessViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter a Business name")]
         [Display(Name="Business Name")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a address")]
         [Display(Name="Business Address")]
         public string Address { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "What is the business type?")]
         [Display(Name="Business Type")]
         public string Type { get; set; }
 
