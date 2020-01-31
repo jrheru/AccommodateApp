@@ -3,13 +3,14 @@
     <h2>@Model.Business.Name</h2>
     <p>@Model.Business.Address<br />@Model.Business.Type</p>
     
-<ul>
+<table class="table table-hover">
     @foreach(var feature in Model.Features)
     {
-        <li>
-            @feature.AFeature.Name
-        </li>
+        <tr class="table-primary">
+            <th scope="col">Accessible Feature</th>
+            <td>@feature.AFeature.Name</td>
+        </tr>
     }
-</ul>
+</table>
 
 <a asp-controller="Business" asp-action="AddFeature" asp-route-id="@Model.Business.ID">Add Accessiblity Feature</a>

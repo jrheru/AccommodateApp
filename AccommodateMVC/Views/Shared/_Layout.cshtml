@@ -18,11 +18,16 @@
                     <span>class="navbar-toggler-icon"</span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="AFeature" asp-action="Add">Add Accessibility</a>
-                        </li>
-                    </ul>
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        <button type="button" class="btn bg-primary">Accessibilites</button>
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn bg-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item" href="/AFeature/Index">View List</a>
+                                <a class="dropdown-item" href="/AFeature/Add">A New Feature</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                         <button type="button" class="btn bg-primary">Public Entities</button>
                         <div class="btn-group" role="group">
